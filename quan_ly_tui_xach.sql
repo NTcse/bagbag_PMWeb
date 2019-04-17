@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 05, 2019 lúc 05:41 AM
+-- Thời gian đã tạo: Th4 17, 2019 lúc 04:29 AM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `chitiethoadon` (
   `ID` int(11) NOT NULL,
-  `mahoadon` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `matuixach` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `mahoadon` varchar(10) NOT NULL,
+  `matuixach` varchar(10) NOT NULL,
   `soluong` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `chitiethoadon`
@@ -51,12 +51,12 @@ INSERT INTO `chitiethoadon` (`ID`, `mahoadon`, `matuixach`, `soluong`) VALUES
 --
 
 CREATE TABLE `giohang` (
-  `magiohang` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `sdt` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `matuixach` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `magiohang` varchar(10) NOT NULL,
+  `sdt` varchar(10) NOT NULL,
+  `matuixach` varchar(10) NOT NULL,
   `soluong` int(2) NOT NULL,
   `trangthai` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `giohang`
@@ -77,12 +77,12 @@ INSERT INTO `giohang` (`magiohang`, `sdt`, `matuixach`, `soluong`, `trangthai`) 
 --
 
 CREATE TABLE `hoadon` (
-  `mahoadon` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `sdt` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `mahoadon` varchar(10) NOT NULL,
+  `sdt` varchar(10) NOT NULL,
   `ngaydat` datetime NOT NULL,
   `trigia` double NOT NULL,
-  `diachinhanhang` varchar(255) CHARACTER SET utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `diachinhanhang` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `hoadon`
@@ -179,12 +179,12 @@ INSERT INTO `nhacungcap` (`manhacungcap`, `tennhacungcap`, `diachi`, `daidien`) 
 --
 
 CREATE TABLE `thongtintuixach` (
-  `matuixach` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `mau` varchar(25) CHARACTER SET utf8mb4 NOT NULL,
-  `chatlieu` varchar(25) CHARACTER SET utf8mb4 NOT NULL,
+  `matuixach` varchar(10) NOT NULL,
+  `mau` varchar(25) NOT NULL,
+  `chatlieu` varchar(25) NOT NULL,
   `baohanh` int(2) NOT NULL,
-  `mota` varchar(255) CHARACTER SET utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `mota` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `thongtintuixach`
@@ -209,12 +209,12 @@ INSERT INTO `thongtintuixach` (`matuixach`, `mau`, `chatlieu`, `baohanh`, `mota`
 --
 
 CREATE TABLE `tuixach` (
-  `matuixach` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `img` text,
+  `matuixach` varchar(10) NOT NULL,
+  `img` text CHARACTER SET latin1,
   `dongia` double NOT NULL,
   `sl_ton` int(11) NOT NULL,
-  `manhacungcap` varchar(10) CHARACTER SET utf8mb4 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `manhacungcap` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tuixach`
